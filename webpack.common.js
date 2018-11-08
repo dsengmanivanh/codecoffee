@@ -8,7 +8,8 @@ module.exports = {
     entry: {
         index: './src/js/index.js',
         search: './src/js/search.js',
-        app:'./src/components/App.js',
+        app: './src/components/App.js',
+        trail: glob.sync("./src/js/trail/*.js"),
         faq: glob.sync("./src/components/faq/*.js"),
         select: glob.sync("./src/components/select/*.js"),
         selectmulti: glob.sync("./src/components/selectmulti/*.js")
@@ -26,12 +27,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
-            chunks: ['index']
+            chunks: ['index','trail']
         }),
         new HtmlWebpackPlugin({
             template: "./src/app.html",
             filename: "./faq.html",
-            chunks: ['app','faq']
+            chunks: ['app', 'faq']
         }),
         new HtmlWebpackPlugin({
             template: "./src/app.html",
@@ -65,7 +66,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         babelrc: false,
-                        presets: ['@babel/preset-env','@babel/preset-react']
+                        presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
             },
@@ -75,7 +76,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name:'media/[name].[ext]'
+                            name: 'media/[name].[ext]'
                         }
                     }
                 ]

@@ -1,4 +1,5 @@
-import '../scss/index.scss';
-import '../media/bg-showcase-1.jpg';
-import '../media/bg-showcase-2.jpg';
-import '../media/bg-showcase-3.jpg';
+import '../scss/main.scss';
+import '../scss/normalize.scss';
+import '../scss/trail.scss';
+const charming = require('charming')
+//import 'charming';

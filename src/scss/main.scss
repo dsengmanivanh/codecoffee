@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+html {
+	background: #28282b;
+}
+
+/* Color schemes */
+
+.demo-trail {
+	--color-text: #ffffff;
+    --color-background: #a8f0a1;
+    --color-link: #2f9925;
+    --color-link-hover: #16630e;
+}
+
+body {
+	font-family: 'Nunito', monospace;
+	color: var(--color-text);
+	background-color: var(--color-background);
+	min-height: 100vh;
+}
+
+.js body {
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.js body.render {
+	opacity: 1;
+}
+
+
+@keyframes loaderAnim {
+	0% {
+		box-shadow: 20px 0 0 var(--color-text), -20px 0 0 transparent;
+		background: transparent;
+	}
+	50% {
+		box-shadow: 20px 0 0 transparent, -20px 0 0 transparent;
+		background: var(--color-text);
+	}
+	100% {
+		box-shadow: 20px 0 0 transparent, -20px 0 0 var(--color-text);
+		background: transparent;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: var(--color-link-hover);
+}
+
+main {
+	position: relative;
+    width: 100%;
+}
+
+.content {
+	position: relative;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	overflow: hidden;
+	min-height: 350px;
+	margin: 0 auto;
+}
+
+.content--layout {
+	grid-template-columns: 100%;
+	padding: 3em 0;
+}
+
+.content--fixed a {
+	pointer-events: auto;
+}
+
+/* Common styles for the words */
+.word {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 0;
+	cursor: default;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@media screen and (max-width: 50em) {
+	.content {
+		height: auto;
+		min-height: 0;
+	}
+	.content--layout {
+		overflow: visible;
+	}
+	.content--fixed {
+		display: block;
+		z-index: 1000;
+		position: relative;
+		padding: 0.85em;
+	}
+}
