@@ -41,4 +41,5 @@ class FaqMessage extends Component  {
     }
 }
 
-module.exports = FaqMessage;
+export default FaqMessage;
+

@@ -20,4 +20,4 @@ class Faq extends Component  {
     }
 }
 
-module.exports = Faq;
+export default Faq

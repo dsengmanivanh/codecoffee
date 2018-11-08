@@ -22,4 +22,4 @@ class SelectMessage extends Component  {
     }
 }
 
-module.exports = SelectMessage;
+export default SelectMessage

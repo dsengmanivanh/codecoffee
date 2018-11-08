@@ -24,4 +24,4 @@ class CardMessage extends Component  {
     }
 }
 
-module.exports = CardMessage;
+export default CardMessage;
